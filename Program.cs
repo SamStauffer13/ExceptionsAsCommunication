@@ -19,7 +19,7 @@ namespace ConsoleApplication
                 }
                 catch (Exception e)
                 {
-                    ErrorHandling();
+                    ErrorHandling(e.Message);
                 }
             }
             timer.Stop();
@@ -32,7 +32,7 @@ namespace ConsoleApplication
 
                 if (response.WasSucessful == false)
                 {
-                    ErrorHandling();
+                    ErrorHandling(response.ErrorMessage);
                 }
             }
             timer.Stop();
@@ -45,7 +45,7 @@ namespace ConsoleApplication
 
                 if (response == null)
                 {
-                    ErrorHandling();
+                    ErrorHandling("Not Found");
                 }
             }
             timer.Stop();
@@ -60,7 +60,8 @@ namespace ConsoleApplication
         {
             return new ResponseObject()
             {
-                WasSucessful = false
+                WasSucessful = false,
+                ErrorMessage = "Not Found"
             };
         }
 
@@ -69,7 +70,7 @@ namespace ConsoleApplication
             return null;
         }
 
-        private static void ErrorHandling()
+        private static void ErrorHandling(string errorMessage)
         {
 
         }
@@ -78,5 +79,6 @@ namespace ConsoleApplication
     public class ResponseObject
     {
         public bool WasSucessful { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }
