@@ -2,11 +2,9 @@
 
 namespace Logic
 {
-    public delegate Response DoWork();
-
     public class Service
     {
-        public Response SomeServiceCall(DoWork codeToExecute)
+        public Response SomeServiceCall(Func<Response> codeToExecute)
         {
             return codeToExecute();
         }
