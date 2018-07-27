@@ -5,6 +5,7 @@ namespace Logic.Tests
 {
     public class ServiceTests
     {
+        // cd to this dir then run dotnet test in terminal
         [Fact]
         public void FirstTest()
         {
