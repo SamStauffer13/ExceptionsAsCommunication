@@ -1,4 +1,5 @@
 using Xunit;
+using Xunit.Abstractions;
 using Logic;
 using System;
 using System.Diagnostics;
@@ -23,77 +24,152 @@ namespace Logic.Tests
             Assert.Equal(expectedNumberOfExecutions, service.NumberOfExecutions);
         }
 
-        [Fact]
-        public void WhenServiceUsesResponseObjectToCommunicateError()
+        public class WhenCallstackIsShallow
         {
-            var service = new Service();
+	        private int callstack = 5;
 
-            var timer = new Stopwatch();
-
-            timer.Start();
-
-            var response = service.SomeServiceCall(() =>
+			private readonly ITestOutputHelper output;
+            public WhenCallstackIsShallow(ITestOutputHelper output)
             {
-                return new Response() { ThereWasAnError = true };
-            }, 10);
+                this.output = output;
+            }
 
-            timer.Stop();
-
-            Console.WriteLine($"execution time with response object: {timer.Elapsed}");
-
-            Assert.True(response.ThereWasAnError);
-        }
-
-        [Fact]
-        public void WhenServiceUsesNullToCommunicateError()
-        {
-            var service = new Service();
-
-            var timer = new Stopwatch();
-
-            timer.Start();
-
-            var response = service.SomeServiceCall(() =>
+            [Fact]
+            public void ResponseObjectToCommunicateError()
             {
-                return null;
-            }, 10);
+                var service = new Service();
 
-            timer.Stop();
+                var timer = new Stopwatch();
 
-            Console.WriteLine($"execution time with null response: {timer.Elapsed}");
+                timer.Start();
 
-            Assert.Equal(null, response);
-        }
+                var response = service.SomeServiceCall(() => new Response { ThereWasAnError = true }, callstack);
 
-        [Fact]
-        public void WhenServiceUsesExceptionToCommunicateError()
-        {
-            var service = new Service();
+                timer.Stop();
 
-            var timer = new Stopwatch();
+                output.WriteLine($"execution time with response object: {timer.Elapsed}");
 
-            timer.Start();
+                Assert.True(response.ThereWasAnError);
+            }
 
-            Exception expectedException = null;
-
-            try
+            [Fact]
+            public void NullToCommunicateError()
             {
-                var response = service.SomeServiceCall(() =>
+                var service = new Service();
+
+                var timer = new Stopwatch();
+
+                timer.Start();
+
+                var response = service.SomeServiceCall(() => null, callstack);
+
+                timer.Stop();
+
+                output.WriteLine($"execution time with null response: {timer.Elapsed}");
+
+                Assert.Equal(null, response);
+            }
+
+            [Fact]
+            public void ExceptionToCommunicateError()
+            {
+                var service = new Service();
+
+                var timer = new Stopwatch();
+
+                Exception expectedException = null;
+
+                timer.Start();
+
+                try
                 {
-                    throw new Exception("something went wrong");
+                    var response = service.SomeServiceCall(() => throw new Exception("something went wrong"), callstack);
+                }
+                catch (Exception e)
+                {
+                    expectedException = e;
+                }
 
-                }, 10);
+                timer.Stop();
+
+                output.WriteLine($"execution time with response object: {timer.Elapsed}");
+
+                Assert.Equal("something went wrong", expectedException.Message);
             }
-            catch (Exception e)
+        }
+
+        public class WhenCallstackIsTenFathomsDeep
+        {
+	        private int callstack = 10000;
+
+			private readonly ITestOutputHelper output;
+            public WhenCallstackIsTenFathomsDeep(ITestOutputHelper output)
             {
-                expectedException = e;
+                this.output = output;
             }
 
-            timer.Stop();
+            [Fact]
+            public void ResponseObjectToCommunicateError()
+            {
+                var service = new Service();
 
-            Console.WriteLine($"execution time with response object: {timer.Elapsed}");
+                var timer = new Stopwatch();
 
-            Assert.Equal("something went wrong", expectedException.Message);
+                timer.Start();
+
+                var response = service.SomeServiceCall(() => new Response { ThereWasAnError = true }, callstack);
+
+                timer.Stop();
+
+                output.WriteLine($"execution time with response object: {timer.Elapsed}");
+
+                Assert.True(response.ThereWasAnError);
+            }
+
+            [Fact]
+            public void NullToCommunicateError()
+            {
+                var service = new Service();
+
+                var timer = new Stopwatch();
+
+                timer.Start();
+
+                var response = service.SomeServiceCall(() => null, callstack);
+
+                timer.Stop();
+
+                output.WriteLine($"execution time with null response: {timer.Elapsed}");
+
+                Assert.Equal(null, response);
+            }
+
+            [Fact]
+            public void ExceptionToCommunicateError()
+            {
+                var service = new Service();
+
+                var timer = new Stopwatch();
+
+                Exception expectedException = null;
+
+                timer.Start();
+
+                try
+                {
+                    var response = service.SomeServiceCall(() => throw new Exception("something went wrong"), callstack);
+                }
+                catch (Exception e)
+                {
+                    expectedException = e;
+                }
+
+                timer.Stop();
+
+                output.WriteLine($"execution time with response object: {timer.Elapsed}");
+
+                Assert.Equal("something went wrong", expectedException.Message);
+            }
         }
     }
 }
