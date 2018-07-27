@@ -11,7 +11,7 @@ namespace Logic.Tests
         {
             var service = new Service();
 
-            var response = service.DoWork();
+            var response = service.SomeServiceCall(()=> {return new Response();});
             
             Assert.True(response.IsSuccess);
         }
