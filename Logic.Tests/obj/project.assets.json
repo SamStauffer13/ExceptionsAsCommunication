@@ -5729,9 +5729,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic.Tests\\Logic.Tests.csproj",
       "projectName": "Logic.Tests",
@@ -5778,6 +5775,7 @@
             "version": "[15.7.0, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

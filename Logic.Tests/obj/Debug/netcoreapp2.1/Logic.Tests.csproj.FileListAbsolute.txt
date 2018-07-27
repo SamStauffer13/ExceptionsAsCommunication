@@ -13,3 +13,5 @@ C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\De
 C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.AssemblyInfo.cs
 C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.dll
 C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.pdb
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.csprojAssemblyReference.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.csproj.CopyComplete
