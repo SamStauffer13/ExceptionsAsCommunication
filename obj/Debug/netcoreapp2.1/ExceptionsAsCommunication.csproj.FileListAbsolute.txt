@@ -1,0 +1,11 @@
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\bin\Debug\netcoreapp2.1\ExceptionsAsCommunication.deps.json
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\bin\Debug\netcoreapp2.1\ExceptionsAsCommunication.runtimeconfig.json
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\bin\Debug\netcoreapp2.1\ExceptionsAsCommunication.runtimeconfig.dev.json
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\bin\Debug\netcoreapp2.1\ExceptionsAsCommunication.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\bin\Debug\netcoreapp2.1\ExceptionsAsCommunication.pdb
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\obj\Debug\netcoreapp2.1\ExceptionsAsCommunication.csprojAssemblyReference.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\obj\Debug\netcoreapp2.1\ExceptionsAsCommunication.csproj.CoreCompileInputs.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\obj\Debug\netcoreapp2.1\ExceptionsAsCommunication.AssemblyInfoInputs.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\obj\Debug\netcoreapp2.1\ExceptionsAsCommunication.AssemblyInfo.cs
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\obj\Debug\netcoreapp2.1\ExceptionsAsCommunication.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\obj\Debug\netcoreapp2.1\ExceptionsAsCommunication.pdb

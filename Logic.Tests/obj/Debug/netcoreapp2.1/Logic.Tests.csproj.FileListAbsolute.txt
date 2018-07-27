@@ -1,0 +1,17 @@
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.Tests.deps.json
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.Tests.runtimeconfig.json
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.Tests.runtimeconfig.dev.json
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.Tests.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.Tests.pdb
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\bin\Debug\netcoreapp2.1\Logic.pdb
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.csprojAssemblyReference.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.AssemblyInfoInputs.cache
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.AssemblyInfo.cs
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.csproj.CopyComplete
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.dll
+C:\Users\Sstauffer\Documents\GitHub\ExceptionsAsCommunication\Logic.Tests\obj\Debug\netcoreapp2.1\Logic.Tests.pdb
