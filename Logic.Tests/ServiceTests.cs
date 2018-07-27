@@ -11,7 +11,7 @@ namespace Logic.Tests
         {
             var service = new Service();
 
-            var response = service.SomeServiceCall(()=> {return new Response();});
+            var response = service.SomeServiceCall(()=> {return new Response() {IsSuccess = true} ;});
             
             Assert.True(response.IsSuccess);
         }

@@ -8,11 +8,9 @@ namespace Logic
     {
         public Response SomeServiceCall(DoWork codeToExecute)
         {
-            return new Response(){};
+            return codeToExecute();
         }
-
     }
-
     public class Response
     {
         public bool IsSuccess { get; set; }
