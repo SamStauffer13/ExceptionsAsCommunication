@@ -176,32 +176,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sstauffer\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/samstauffer/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic\\Logic.csproj",
+      "projectUniqueName": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic/Logic.csproj",
       "projectName": "Logic",
-      "projectPath": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic\\Logic.csproj",
-      "packagesPath": "C:\\Users\\Sstauffer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic\\obj\\",
+      "projectPath": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic/Logic.csproj",
+      "packagesPath": "/Users/samstauffer/.nuget/packages/",
+      "outputPath": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sstauffer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/samstauffer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://tfs15.tpgi.us:9001/nuget": {},
-        "http://tfs15.tpgi.us:9002/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

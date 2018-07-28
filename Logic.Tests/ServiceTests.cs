@@ -8,167 +8,111 @@ namespace Logic.Tests
 {
     public class ServiceTests  // cd to this dir then run dotnet test in terminal
     {
+        private readonly ITestOutputHelper output;
+        public ServiceTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+
         [Fact]
-        public void NumberOfExecutionsCanBeControlled()
+        public void MethodIsRecursiveSoWeCanControlCallStackSize()
         {
             var service = new Service();
 
-            var expectedNumberOfExecutions = 7;
+            var expectedNumberOfExecutions = 10;
 
-            var response = service.SomeServiceCall(() =>
-            {
-                return new Response();
-
-            }, expectedNumberOfExecutions);
+            var response = service.SomeServiceCall(GetCodeToExecute(ResponseType.Object), expectedNumberOfExecutions);
 
             Assert.Equal(expectedNumberOfExecutions, service.NumberOfExecutions);
         }
 
-        public class WhenCallstackIsShallow
+        [Fact]
+        public void ReturningObjectToCommunicateError()
         {
-	        private int callstack = 5;
+            var service = new Service();
 
-			private readonly ITestOutputHelper output;
-            public WhenCallstackIsShallow(ITestOutputHelper output)
+            var response = service.SomeServiceCall(GetCodeToExecute(ResponseType.Object), 0);
+
+            Assert.True(response.ThereWasAnError);
+        }
+
+        [Fact]
+        public void ReturningNullToCommunicateError()
+        {
+            var service = new Service();
+
+            var response = service.SomeServiceCall(GetCodeToExecute(ResponseType.Null), 0);
+
+            Assert.Equal(null, response);
+        }
+
+        [Fact]
+        public void ThrowingExceptionToCommunicateError()
+        {
+            var service = new Service();
+
+            var expectedMessage = "something went wrong";
+
+            try
             {
-                this.output = output;
+                var response = service.SomeServiceCall(() => throw new Exception(expectedMessage), 0);
             }
-
-            [Fact]
-            public void ResponseObjectToCommunicateError()
+            catch (Exception e)
             {
-                var service = new Service();
-
-                var timer = new Stopwatch();
-
-                timer.Start();
-
-                var response = service.SomeServiceCall(() => new Response { ThereWasAnError = true }, callstack);
-
-                timer.Stop();
-
-                output.WriteLine($"execution time with response object: {timer.Elapsed}");
-
-                Assert.True(response.ThereWasAnError);
-            }
-
-            [Fact]
-            public void NullToCommunicateError()
-            {
-                var service = new Service();
-
-                var timer = new Stopwatch();
-
-                timer.Start();
-
-                var response = service.SomeServiceCall(() => null, callstack);
-
-                timer.Stop();
-
-                output.WriteLine($"execution time with null response: {timer.Elapsed}");
-
-                Assert.Equal(null, response);
-            }
-
-            [Fact]
-            public void ExceptionToCommunicateError()
-            {
-                var service = new Service();
-
-                var timer = new Stopwatch();
-
-                Exception expectedException = null;
-
-                timer.Start();
-
-                try
-                {
-                    var response = service.SomeServiceCall(() => throw new Exception("something went wrong"), callstack);
-                }
-                catch (Exception e)
-                {
-                    expectedException = e;
-                }
-
-                timer.Stop();
-
-                output.WriteLine($"execution time with response object: {timer.Elapsed}");
-
-                Assert.Equal("something went wrong", expectedException.Message);
+                Assert.Equal(expectedMessage, e.Message);
             }
         }
 
-        public class WhenCallstackIsTenFathomsDeep
+        [Theory]
+        [InlineData(ResponseType.Object, 1)]
+        [InlineData(ResponseType.Object, 100)]
+        [InlineData(ResponseType.Object, 5000)]
+        [InlineData(ResponseType.Null, 1)]
+        [InlineData(ResponseType.Null, 100)]
+        [InlineData(ResponseType.Null, 5000)]
+        [InlineData(ResponseType.Exception, 1)]
+        [InlineData(ResponseType.Exception, 100)]
+        [InlineData(ResponseType.Exception, 5000)]
+        public void ProofThatCatchingExceptionsIsSlow(ResponseType responseType, int callstackSize)
         {
-	        private int callstack = 10000;
+            var service = new Service();
 
-			private readonly ITestOutputHelper output;
-            public WhenCallstackIsTenFathomsDeep(ITestOutputHelper output)
+            var timer = new Stopwatch();
+
+            var codeToExecute = GetCodeToExecute(responseType);
+
+            timer.Start();
+
+            try
             {
-                this.output = output;
+                var response = service.SomeServiceCall(codeToExecute, callstackSize);
+            }
+            catch (Exception)
+            {
+
             }
 
-            [Fact]
-            public void ResponseObjectToCommunicateError()
+            timer.Stop();
+
+            output.WriteLine($"handling an {responseType.ToString()} response with  a {callstackSize} deep callstack took {timer.Elapsed.Milliseconds}ms");
+
+            Assert.True(timer.Elapsed.Milliseconds < 2);
+        }
+
+        public enum ResponseType
+        {
+            Null,
+            Object,
+            Exception
+        }
+        public Func<Response> GetCodeToExecute(ResponseType response) // cuz idk the syntax to use a delegate as an InlineData parameter
+        {
+            switch (response)
             {
-                var service = new Service();
-
-                var timer = new Stopwatch();
-
-                timer.Start();
-
-                var response = service.SomeServiceCall(() => new Response { ThereWasAnError = true }, callstack);
-
-                timer.Stop();
-
-                output.WriteLine($"execution time with response object: {timer.Elapsed}");
-
-                Assert.True(response.ThereWasAnError);
-            }
-
-            [Fact]
-            public void NullToCommunicateError()
-            {
-                var service = new Service();
-
-                var timer = new Stopwatch();
-
-                timer.Start();
-
-                var response = service.SomeServiceCall(() => null, callstack);
-
-                timer.Stop();
-
-                output.WriteLine($"execution time with null response: {timer.Elapsed}");
-
-                Assert.Equal(null, response);
-            }
-
-            [Fact]
-            public void ExceptionToCommunicateError()
-            {
-                var service = new Service();
-
-                var timer = new Stopwatch();
-
-                Exception expectedException = null;
-
-                timer.Start();
-
-                try
-                {
-                    var response = service.SomeServiceCall(() => throw new Exception("something went wrong"), callstack);
-                }
-                catch (Exception e)
-                {
-                    expectedException = e;
-                }
-
-                timer.Stop();
-
-                output.WriteLine($"execution time with response object: {timer.Elapsed}");
-
-                Assert.Equal("something went wrong", expectedException.Message);
+                case ResponseType.Null: return () => null;
+                case ResponseType.Exception: return () => throw new Exception("something went wrong");
+                default:
+                case ResponseType.Object: return () => new Response { ThereWasAnError = true };
             }
         }
     }

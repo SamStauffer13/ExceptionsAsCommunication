@@ -5724,39 +5724,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sstauffer\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/samstauffer/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic.Tests\\Logic.Tests.csproj",
+      "projectUniqueName": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic.Tests/Logic.Tests.csproj",
       "projectName": "Logic.Tests",
-      "projectPath": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic.Tests\\Logic.Tests.csproj",
-      "packagesPath": "C:\\Users\\Sstauffer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic.Tests\\obj\\",
+      "projectPath": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic.Tests/Logic.Tests.csproj",
+      "packagesPath": "/Users/samstauffer/.nuget/packages/",
+      "outputPath": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic.Tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sstauffer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/samstauffer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://tfs15.tpgi.us:9001/nuget": {},
-        "http://tfs15.tpgi.us:9002/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic\\Logic.csproj": {
-              "projectPath": "C:\\Users\\Sstauffer\\Documents\\GitHub\\ExceptionsAsCommunication\\Logic\\Logic.csproj"
+            "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic/Logic.csproj": {
+              "projectPath": "/Users/samstauffer/Documents/GitHub/ExceptionsAsCommunication/Logic/Logic.csproj"
             }
           }
         }
