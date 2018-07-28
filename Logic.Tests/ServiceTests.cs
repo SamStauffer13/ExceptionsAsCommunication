@@ -55,7 +55,7 @@ namespace Logic.Tests
 
             try
             {
-                var response = service.SomeServiceCall(() => throw new Exception(expectedMessage), 0);
+                var response = service.SomeServiceCall(GetCodeToExecute(ResponseType.Exception), 0);
             }
             catch (Exception e)
             {
