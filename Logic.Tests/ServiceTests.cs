@@ -43,7 +43,7 @@ namespace Logic.Tests
 
             var response = service.SomeServiceCall(GetCodeToExecute(ResponseType.Null), 0);
 
-            Assert.Equal(null, response);
+            Assert.Null(response);
         }
 
         [Fact]
@@ -94,7 +94,7 @@ namespace Logic.Tests
 
             timer.Stop();
 
-            output.WriteLine($"handling an {responseType.ToString()} response with  a {callstackSize} deep callstack took {timer.Elapsed.Milliseconds}ms");
+            output.WriteLine($"handling an {responseType.ToString()} response with a {callstackSize} deep callstack took {timer.Elapsed.Milliseconds}ms");
 
             Assert.True(timer.Elapsed.Milliseconds < 2);
         }
