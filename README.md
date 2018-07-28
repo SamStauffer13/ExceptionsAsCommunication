@@ -9,10 +9,8 @@ To run unit tests (this works on both mac and pc btw):
 5. observe why the test is failing! 
 
 resources:
-getting to hello world in .Net Core: https://code.visualstudio.com/docs/other/dotnet
-
-C# unit testing in vs code: https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
-
-having fun with delegates: http://jeremybytes.com/Downloads/GetFuncyWithDelegates.pdf
-
+1. getting to hello world in .Net Core: https://code.visualstudio.com/docs/other/dotnet
+2. C# unit testing in vs code: https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test
+3. having fun with delegates: http://jeremybytes.com/Downloads/GetFuncyWithDelegates.pdf
+4. check out Jeremy's youtube on delegates:
 https://www.youtube.com/watch?v=MqxRpXUVZ8E&t=0s&list=PLdbkZkVDyKZU5ZXqp5YP1TS3irQKHZilU&index=2
